@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/test-web3auth/static/css/main.073c9b0a.css",
-    "main.js": "/test-web3auth/static/js/main.6aef880e.js",
+    "main.js": "/test-web3auth/static/js/main.bfcbf66f.js",
     "static/js/978.0088939f.chunk.js": "/test-web3auth/static/js/978.0088939f.chunk.js",
     "static/js/293.ab0ea23d.chunk.js": "/test-web3auth/static/js/293.ab0ea23d.chunk.js",
     "static/js/389.987bddab.chunk.js": "/test-web3auth/static/js/389.987bddab.chunk.js",
@@ -21,7 +21,7 @@
     "static/js/938.101c655b.chunk.js": "/test-web3auth/static/js/938.101c655b.chunk.js",
     "index.html": "/test-web3auth/index.html",
     "main.073c9b0a.css.map": "/test-web3auth/static/css/main.073c9b0a.css.map",
-    "main.6aef880e.js.map": "/test-web3auth/static/js/main.6aef880e.js.map",
+    "main.bfcbf66f.js.map": "/test-web3auth/static/js/main.bfcbf66f.js.map",
     "389.987bddab.chunk.js.map": "/test-web3auth/static/js/389.987bddab.chunk.js.map",
     "579.c68c73a7.chunk.js.map": "/test-web3auth/static/js/579.c68c73a7.chunk.js.map",
     "773.b09d8f0d.chunk.js.map": "/test-web3auth/static/js/773.b09d8f0d.chunk.js.map",
@@ -37,6 +37,6 @@
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.6aef880e.js"
+    "static/js/main.bfcbf66f.js"
   ]
 }
