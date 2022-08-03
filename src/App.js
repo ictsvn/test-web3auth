@@ -20,6 +20,12 @@ function App() {
     web3auth.connect().then(() => setConnected(true));
   }, [web3auth]);
 
+  const onLogout = useCallback(() => {
+    web3auth.logout().then(() => {
+      setConnected(false);
+    })
+  }, [web3auth]);
+
   const onSign = useCallback(async () => {
     const web3 = new Web3(web3auth.provider);
     const fromAddress = (await web3.eth.getAccounts())[0];
@@ -36,6 +42,7 @@ function App() {
       <header className="App-header">
         {connected && <input placeholder="type your message here" onChange={e => message.current = e.target.value} type="text"></input>}
         <button onClick={connected ? onSign : ready ? onConnect : undefined} type="button">{connected ? 'Sign' : ready ? 'Connect' : 'Initializing'}</button>
+        {connected && <button onClick={onLogout}>Logout</button>}
       </header>
     </div>
   );
