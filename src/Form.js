@@ -53,7 +53,6 @@ const FormData = (props) => {
     setTimeout(() => {
       setIsCopy(false);
     }, 1500);
-    // alert("copied");
   };
 
   return (

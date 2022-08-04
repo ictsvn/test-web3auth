@@ -58,9 +58,12 @@ function App() {
         hashString,
         walletAddress
       );
-
       setDataHash(hashString);
       setSignature(signedMessage);
+
+      if (dataHash && signedMessage) {
+        setShowModal(true);
+      }
     },
     [web3auth.provider, walletAddress]
   );
@@ -71,13 +74,6 @@ function App() {
       .then(() => setReady(true))
       .catch(window.alert);
   }, [web3auth]);
-
-  useEffect(() => {
-    if (dataHash && signature) {
-      setShowModal(true);
-      // window.alert(`dataHash: ${dataHash}\nsignature: ${signature}`);
-    }
-  }, [dataHash, signature]);
 
   const onCopyAddress = async (value) => {
     await navigator.clipboard.writeText(value);
