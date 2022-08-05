@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/test-web3auth/static/css/main.f2c91550.css",
-    "main.js": "/test-web3auth/static/js/main.1f296bfe.js",
+    "main.css": "/test-web3auth/static/css/main.96688656.css",
+    "main.js": "/test-web3auth/static/js/main.ddebc6df.js",
     "static/js/978.0088939f.chunk.js": "/test-web3auth/static/js/978.0088939f.chunk.js",
     "static/js/293.ab0ea23d.chunk.js": "/test-web3auth/static/js/293.ab0ea23d.chunk.js",
     "static/js/389.987bddab.chunk.js": "/test-web3auth/static/js/389.987bddab.chunk.js",
@@ -19,9 +19,10 @@
     "static/js/968.4efcbbcc.chunk.js": "/test-web3auth/static/js/968.4efcbbcc.chunk.js",
     "static/js/98.8d0c12b1.chunk.js": "/test-web3auth/static/js/98.8d0c12b1.chunk.js",
     "static/js/938.101c655b.chunk.js": "/test-web3auth/static/js/938.101c655b.chunk.js",
+    "static/media/copy-icon.svg": "/test-web3auth/static/media/copy-icon.ad1819f4392885979077ef4d027a3b73.svg",
     "index.html": "/test-web3auth/index.html",
-    "main.f2c91550.css.map": "/test-web3auth/static/css/main.f2c91550.css.map",
-    "main.1f296bfe.js.map": "/test-web3auth/static/js/main.1f296bfe.js.map",
+    "main.96688656.css.map": "/test-web3auth/static/css/main.96688656.css.map",
+    "main.ddebc6df.js.map": "/test-web3auth/static/js/main.ddebc6df.js.map",
     "389.987bddab.chunk.js.map": "/test-web3auth/static/js/389.987bddab.chunk.js.map",
     "579.c68c73a7.chunk.js.map": "/test-web3auth/static/js/579.c68c73a7.chunk.js.map",
     "773.c234b7f3.chunk.js.map": "/test-web3auth/static/js/773.c234b7f3.chunk.js.map",
@@ -36,7 +37,7 @@
     "938.101c655b.chunk.js.map": "/test-web3auth/static/js/938.101c655b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f2c91550.css",
-    "static/js/main.1f296bfe.js"
+    "static/css/main.96688656.css",
+    "static/js/main.ddebc6df.js"
   ]
 }
