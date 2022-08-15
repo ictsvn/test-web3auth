@@ -18,9 +18,9 @@ const FormText = (props) => {
       <Title label={titleText} />
       <div className="col-span-4 sm:col-span-2 boxAddress">
         <span className="addressValue">{value}</span>
-        <div>
+        {onCopy && <div>
           <CopyIcon onClick={copyValue} />
-        </div>
+        </div>}
       </div>
     </Row>
   );

@@ -1,5 +1,6 @@
 import { Web3Auth } from "@web3auth/web3auth";
 import Web3 from "web3";
+import { ethers } from "ethers";
 
 import "./App.css";
 import FormData from "./Form";
@@ -8,13 +9,15 @@ import FormText from "./FormText";
 
 const ethAbi = require("ethereumjs-abi");
 
+const abi = require("./abi.json");
+
 function App() {
   const [web3auth] = useState(
     new Web3Auth({
       clientId: process.env.REACT_APP_CLIENT_ID,
       chainConfig: {
         chainNamespace: "eip155",
-        chainId: "0x89", // hex of 137, polygon mainnet
+        chainId: process.env.REACT_APP_CHAIN_ID,
       },
     })
   );
@@ -25,6 +28,8 @@ function App() {
   const [dataHash, setDataHash] = useState("");
   const [signature, setSignature] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [balance, setBalance] = useState('');
+  const [loading, setLoading] = useState(false);
   const [isCopy, setIsCopy] = useState(false);
   const onConnect = useCallback(async () => {
     await web3auth.connect();
@@ -32,6 +37,8 @@ function App() {
     const web3 = new Web3(web3auth.provider);
     const fromAddress = (await web3.eth.getAccounts())[0];
     setWalletAddress(fromAddress);
+    const balance = await web3.eth.getBalance(fromAddress);
+    setBalance(Number(web3.utils.fromWei(balance, "ether")).toFixed(6) + " ETH");
 
     setConnected(true);
   }, [web3auth]);
@@ -41,6 +48,22 @@ function App() {
       setConnected(false);
     });
   }, [web3auth]);
+
+  const onMint = useCallback(async () => {
+    try {
+      setLoading(true);
+      const provider = new ethers.providers.Web3Provider(web3auth.provider);
+      const signer = provider.getSigner();
+      const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS || '';
+      const contract = new ethers.Contract(contractAddress, abi, signer);
+      const tx = await contract.mint();
+      await tx.wait();
+      setLoading(false);
+      window.open(`${process.env.REACT_APP_EXPLORER}/tx/${tx.hash}`, '_blank');
+    } catch (err) {
+      setLoading(false);
+    }
+  }, [web3auth.provider])
 
   const onSign = useCallback(
     async (info) => {
@@ -89,8 +112,10 @@ function App() {
         {connected ? (
           <FormData
             walletAddress={walletAddress}
-            onSign={onSign}
+            balance={balance}
+            onMint={onMint}
             onLogout={onLogout}
+            loading={loading}
           />
         ) : ready ? (
           <button className="buttonForm" onClick={onConnect} type="button">
