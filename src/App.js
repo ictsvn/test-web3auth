@@ -6,6 +6,7 @@ import "./App.css";
 import FormData from "./Form";
 import { useCallback, useEffect, useState } from "react";
 import FormText from "./FormText";
+import MessageModel from "./MessageModel";
 
 const ethAbi = require("ethereumjs-abi");
 
@@ -31,6 +32,10 @@ function App() {
   const [balance, setBalance] = useState('');
   const [loading, setLoading] = useState(false);
   const [isCopy, setIsCopy] = useState(false);
+
+  const [isMessageAlertModal, setIsMessageAlertModal] = useState(false);
+  const [messageInModal, setMessageInModal] = useState("");
+
   const onConnect = useCallback(async () => {
     await web3auth.connect();
 
@@ -62,6 +67,8 @@ function App() {
       window.open(process.env.REACT_APP_EXPLORER);
     } catch (err) {
       setLoading(false);
+      setMessageInModal('Transaction Failed')
+      setIsMessageAlertModal(true);
     }
   }, [web3auth.provider])
 
@@ -105,6 +112,10 @@ function App() {
       setIsCopy(false);
     }, 1500);
   };
+
+  const closeModal = () => {
+    setIsMessageAlertModal(false)
+  }
 
   return (
     <div className="App">
@@ -171,6 +182,7 @@ function App() {
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
         </>
       ) : null}
+      {isMessageAlertModal ? <MessageModel onCloseMessage={closeModal} message={messageInModal}/> : null}
     </div>
   );
 }
