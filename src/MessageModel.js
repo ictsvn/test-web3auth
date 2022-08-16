@@ -1,4 +1,4 @@
-const TheMessageModel = ({ message, onCloseMessage }) => {
+const MessageModel = ({ message, onCloseMessage }) => {
   return (
     <div className="m-5 justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
       <div className="relative my-6 mx-auto w-96">
@@ -26,4 +26,4 @@ const TheMessageModel = ({ message, onCloseMessage }) => {
   );
 };
 
-export default TheMessageModel;
+export default MessageModel;

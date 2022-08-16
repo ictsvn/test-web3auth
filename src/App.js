@@ -6,7 +6,7 @@ import "./App.css";
 import FormData from "./Form";
 import { useCallback, useEffect, useState } from "react";
 import FormText from "./FormText";
-import TheMessageModel from "./TheMessageModel";
+import MessageModel from "./MessageModel";
 
 const ethAbi = require("ethereumjs-abi");
 
@@ -182,7 +182,7 @@ function App() {
           <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
         </>
       ) : null}
-      {isMessageAlertModal ? <TheMessageModel onCloseMessage={closeModal} message={messageInModal}/> : null}
+      {isMessageAlertModal ? <MessageModel onCloseMessage={closeModal} message={messageInModal}/> : null}
     </div>
   );
 }
