@@ -26,6 +26,8 @@ code {
   width: 150px;
   font-size: 1rem;
   text-align: left;
+  display: flex;
+  align-items: center;
 }
 
 .inputForm {
@@ -95,6 +97,11 @@ code {
 .buttonForm:hover {
   box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
   transition-duration: 0.1s;
+}
+button:disabled,
+button[disabled] {
+  background: transparent;
+  color: #a8a5a5;
 }
 
 .copyElement {
