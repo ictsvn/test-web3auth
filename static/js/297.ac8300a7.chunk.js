@@ -1,1 +1,0 @@
-(self.webpackChunktest_web3auth=self.webpackChunktest_web3auth||[]).push([[297,293],{22399:function(){},78848:function(){}}]);
