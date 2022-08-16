@@ -1,5 +1,5 @@
 import { ReactComponent as LoadingIcon } from "./loading-icon.svg";
-const TheLoading = ({ loading = false, mainName, subName, onAction }) => {
+const Button = ({ loading = false, mainName, subName, onAction }) => {
   return (
     <button
       className="buttonForm flex items-center justify-center"
@@ -17,4 +17,4 @@ const TheLoading = ({ loading = false, mainName, subName, onAction }) => {
   );
 };
 
-export default TheLoading;
+export default Button;
