@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormText from "./FormText";
+import Button from "./Button";
 
 const FormData = (props) => {
   const { walletAddress, balance, loading, onLogout, onMint } = props;
@@ -20,16 +21,13 @@ const FormData = (props) => {
         onCopy={onCopyAddress}
         titleText="Walle Address"
       />
-      <FormText
-        value={balance}
-        titleText="Balance"
+      <FormText value={balance} titleText="Balance" />
+      <Button
+        loading={loading}
+        label={loading ? "Minting..." : "Mint"}
+        onAction={onMint}
       />
-      <button className="buttonForm" onClick={onMint} disabled={loading} type="button">
-        {loading ? 'Minting' : 'Mint'}
-      </button>
-      <button className="buttonForm" onClick={onLogout} type="button">
-        Disconnect
-      </button>
+      <Button onAction={onLogout} label="Disconnect" />
       {isCopy ? (
         <>
           <div className="text-right copyElement">
