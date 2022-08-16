@@ -59,7 +59,7 @@ function App() {
       const tx = await contract.mint();
       await tx.wait();
       setLoading(false);
-      window.open(`${process.env.REACT_APP_EXPLORER}/tx/${tx.hash}`, '_blank');
+      window.open(process.env.REACT_APP_EXPLORER);
     } catch (err) {
       setLoading(false);
     }
