@@ -24,11 +24,10 @@ const FormData = (props) => {
       <FormText value={balance} titleText="Balance" />
       <Button
         loading={loading}
-        mainName="Mint"
-        subName="Minting..."
+        label={loading ? "Minting..." : "Mint"}
         onAction={onMint}
       />
-      <Button onAction={onLogout} mainName="Disconnect" />
+      <Button onAction={onLogout} label="Disconnect" />
       {isCopy ? (
         <>
           <div className="text-right copyElement">

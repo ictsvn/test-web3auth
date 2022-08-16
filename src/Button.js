@@ -1,5 +1,5 @@
 import { ReactComponent as LoadingIcon } from "./loading-icon.svg";
-const Button = ({ loading = false, mainName, subName, onAction }) => {
+const Button = ({ loading = false, label, onAction }) => {
   return (
     <button
       className="buttonForm flex items-center justify-center"
@@ -12,7 +12,7 @@ const Button = ({ loading = false, mainName, subName, onAction }) => {
           <LoadingIcon />
         </div>
       ) : null}
-      {loading ? subName : mainName}
+      {label}
     </button>
   );
 };
